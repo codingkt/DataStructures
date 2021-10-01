@@ -6,8 +6,12 @@ class Stack:
 		self.items.append(e)
 
 	def pop(self):
-		return self.items.pop()
+		if len(self.items) > 0:
+			return self.items.pop()
 	
 	def top(self):
 		if len(self.items) > 0:
 			return self.items[-1]
+
+	def empty(self):
+		return len(self.items) == 0
