@@ -18,6 +18,9 @@ class Vector2D:
 	def dot(self, other: Vector2D):
 		return (self.x * other.x) + (self.y * other.y)
 
+	def __eq__(self, other: Vector2D):
+		return (self.x == other.x) and (self.y == other.y)
+
 	def __add__(self, other: Vector2D):
 		return Vector2D(self.x + other.x, self.y + other.y)
 
@@ -34,6 +37,9 @@ class Vector2D:
 
 	def __floordiv__(self, factor: float):
 		return Vector2D(self.x // factor, self.y // factor)
+
+	def __mod__(self, modulo: float):
+		return Vector2D(self.x % modulo, self.y % modulo)
 
 	def __pow__(self, power: float):
 		return Vector2D(self.x ** power, self.y ** power)
